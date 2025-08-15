@@ -6,37 +6,72 @@ Description: 教育サイトデモ用
 Version: 1.0.1
 */
 
+:root{
+  /* ================================
+     Layout（レイアウトの最大幅など）
+  ===================================*/
+  --max-w: 1040px; /* コンテンツ幅の上限（px） */
+
+  /* ================================
+     Spacing（余白サイズ）
+     名前の数字はrem換算の目安
+  ===================================*/
+  --space-1: .4rem;  /* ごく小さい余白（ラベルや小要素間） */
+  --space-2: .8rem;  /* 小余白（テキスト上下） */
+  --space-3: 1.2rem; /* 中余白（段落間や小ブロック間） */
+  --space-4: 1.6rem; /* 基本余白（コンポーネント間） */
+  --space-6: 2.4rem; /* セクション内のまとまり */
+  --space-8: 3.2rem; /* セクション上下余白（狭め） */
+  --space-12: 4.8rem;/* セクション上下余白（広め） */
+
+  /* ================================
+     Radius & Shadow（角丸と影）
+  ===================================*/
+  --radius-sm: .6rem;  /* 小さめ角丸（タグや小ボタン） */
+  --radius: .8rem;     /* 標準角丸（ボタンやカード） */
+  --radius-lg: 1.2rem; /* 大きめ角丸（大きいカードや画像） */
+  --shadow-sm: 0 2px 10px rgba(2,6,23,.06);  /* 軽い影（浮かせ感） */
+  --shadow-md: 0 10px 30px rgba(2,6,23,.10); /* 中くらいの影（強調用） */
+
+  /* ================================
+     Typography（フォントとサイズ）
+     clamp()でレスポンシブ対応
+  ===================================*/
+  --font-body: ui-sans-serif, system-ui, "Inter", "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Segoe UI", Arial, sans-serif;
+  --fs-xs: clamp(.78rem, .72rem + .2vw, .85rem);  /* 補足・注釈 */
+  --fs-sm: clamp(.9rem, .86rem + .2vw, .95rem);   /* 小文字（ラベル） */
+  --fs-base: 1rem;                                /* 基本本文 */
+  --fs-lg: clamp(1.05rem, .98rem + .5vw, 1.2rem); /* 中見出し・強調 */
+  --fs-xl: clamp(1.4rem, 1.1rem + 1.2vw, 1.8rem); /* セクション見出し */
+  --fs-2xl: clamp(1.8rem, 1.4rem + 2vw, 2.4rem);  /* ヒーロー見出し */
+
+/* ================================
+    Colors（教育LP向け配色）
+    brand=信頼ブルー、accent=行動グリーン
+===================================*/
+  --color-bg: #ffffff;            /* ページ背景色 */
+  --color-surface: #f8fafc;       /* セクション背景（薄いグレー） */
+  --color-fg: #0f172a;            /* 本文色（濃い紺系） */
+  --color-muted: #475569;         /* 補足文字色（中間グレー） */
+  --color-border: #e5e7eb;        /* 境界線色（淡いグレー） */
+
+  --color-brand: #2563eb;         /* 主導線色（青-600） */
+  --color-brand-ink: #ffffff;     /* 主導線上の文字色 */
+
+  --color-accent: #16a34a;        /* 強調色（緑-600） */
+  --color-accent-ink: #ffffff;    /* 強調色上の文字色 */
+
+  --color-link: var(--color-brand);     /* リンク色 */
+  --color-link-hover: #1d4ed8;    /* リンクhover色（青-700） */
+}
+
 @import url('css/components.css');
 @import url('css/pages.css');
 @import url('css/responsive.css');
 
-:root {
-    --font-heading: "Noto Sans JP", sans-serif;
-    /* 見出しフォント　*/
-    --font-body: "Noto Sans JP", sans-serif;
-    /* メインフォント　*/
-
-    --color-bg: #0e0f11;
-    /* メイン背景　*/
-    --color-bg-alt: #1a1c1f;
-    /* サブ背景 */
-    --color-text: #e0f8f8;
-    /* メイン文字 */
-    --color-accent: #55d1c9;
-    /* アクセント */
-    --color-accent-hover: #3dbbb3;
-    /* ホバー */
-    --color-muted: #aaa;
-    /* 補足文字 */
-    --color-border: #2b2f33;
-    /* 境界線 */
-
-    --btn-primary: #55d1c9;
-    /* ボタン */
-    --btn-secondary: #ced4da;
-    /* サブボタン */
-    --btn-bg: #ffffff;
-    /* ボタン背景 */
+html{ 
+    scroll-behavior:smooth; 
+    -webkit-text-size-adjust:100%;
 }
 
 /* いわゆる簡易リセットＣＳＳ */
@@ -49,13 +84,17 @@ Version: 1.0.1
 body {
     font-family: var(--font-body);
     line-height: 1.6;
-    color: var(--color-text);
+    color: var(--color-fg);
     background-color: var(--color-bg);
 }
 
-a {
-    color: inherit;
+
+a{
+    color: var(--color-link); 
     text-decoration: none;
+}
+a:hover{
+    color: var(--color-link-hover);
 }
 
 ul,
@@ -63,7 +102,23 @@ li {
     list-style: none;
 }
 
+img{
+    max-width:100%;
+    height:auto;
+    display:block;
+}
+
 /* Utility Classes */
+.container{
+    max-width: var(--max-w);
+    margin-inline:auto;
+    padding-inline: var(--space-4)
+}
+
+.section{ padding: var(--space-12) 0; border-top:1px solid var(--color-border); background: var(--color-surface) }
+.section--plain{ background: var(--color-bg) } /* ヒーローなど白ベース用 */
+.muted{ color: var(--color-muted) }
+
 .text-center { text-align: center; }
 .text-right { text-align: right; }
 .text-left { text-align: left; }
