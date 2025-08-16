@@ -1,52 +1,62 @@
 <!DOCTYPE html>
 <html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
-    <link rel="stylesheet" href="style.css">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
+    />
+    <link rel="stylesheet" href="style.css" />
 
     <title>Document</title>
-</head>
+  </head>
 
-<body>
-    <header class="header">
-        <div class="container">
-            <h1 class="logo">EduBrand</h1>
-        </div>
+  <body>
+    <header class="header" id="top">
+      <div class="container header__inner">
+        <a class="logo" href="#top">EduBrand</a>
+
+        <!-- ハンバーガーボタン（SP表示、PCでは非表示にする） -->
+        <button class="hamburger" aria-controls="site-nav" aria-expanded="false" aria-label="メニューを開く">
+          <span class="hamburger__bar"></span>
+          <span class="hamburger__bar"></span>
+          <span class="hamburger__bar"></span>
+        </button>
+
+        <!-- ナビ（SP: 非表示→ハンバーガーで開く / PC: 横並び） -->
+        <nav id="site-nav" class="site-nav" aria-label="メイン" aria-hidden="true" inert>
+          <a href="#proof" class="site-nav__link">選ばれる理由</a>
+          <a href="#curriculum" class="site-nav__link">学べること</a>
+          <a href="#faq" class="site-nav__link">FAQ</a>
+          <a href="#cta" class="button button--primary site-nav__cta">無料で始める</a>
+        </nav>
+      </div>
     </header>
 
     <main>
-        <section class="hero">
-            Hero Section（ファーストビュー）
-        </section>
+      <section id="hero" class="hero">Hero Section（ファーストビュー）</section>
 
-        <section class="proof">
-            社会的証明
-        </section>
+      <section id="proof" class="proof">選ばれる理由</section>
 
-        <section class="curriculum">
-            カリキュラム紹介
-        </section>
+      <section id="curriculum" class="curriculum">学べること</section>
 
-        <section class="faq">
-            FAQ
-        </section>
+      <section id="faq" class="faq">FAQ</section>
 
-        <section class="cta">
-            最終CTA
-        </section>
+      <section id="cta" class="cta">最終CTA</section>
     </main>
 
     <footer class="footer">
-        <div class="container">© 2025 EduBrand</div>
+      <div class="container">© 2025 EduBrand</div>
     </footer>
 
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script src="js/main.js"></script>
-</body>
-
+  </body>
 </html>

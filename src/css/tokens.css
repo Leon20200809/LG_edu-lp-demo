@@ -1,0 +1,63 @@
+/* tokens.css — 世界観（色・余白・文字）の定義だけを置く。実装ロジックは禁止。 */
+:root{
+  /* ===== Layout ===== */
+  --max-w: 1040px; /* コンテンツ幅の上限（px） */
+
+  /* ===== Spacing（余白スケール）===== */
+  --space-1: .4rem;  /* ラベル等の極小間隔 */
+  --space-2: .8rem;  /* テキスト上下の小間隔 */
+  --space-3: 1.2rem; /* 段落や小ブロック間 */
+  --space-4: 1.6rem; /* 基本余白（コンポーネント間） */
+  --space-6: 2.4rem; /* セクション内まとまり */
+  --space-8: 3.2rem; /* セクション上下（狭） */
+  --space-12: 4.8rem;/* セクション上下（広） */
+
+  /* ===== Radius & Shadow（角丸・影）===== */
+  --radius-sm: .6rem;   /* 小ボタン・タグ */
+  --radius: .8rem;      /* 標準ボタン・カード */
+  --radius-lg: 1.2rem;  /* 大きいカード・画像 */
+  --shadow-sm: 0 2px 10px rgba(2,6,23,.06);  /* 軽い浮き */
+  --shadow-md: 0 10px 30px rgba(2,6,23,.10); /* 目立たせ */
+
+  /* ===== Typography（書体・サイズ）===== */
+    --font-body: ui-sans-serif, system-ui, "Inter", "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Segoe UI", Arial, sans-serif;
+  --fs-xs:  clamp(.78rem, .72rem + .2vw, .85rem);  /* 注釈 */
+  --fs-sm:  clamp(.9rem,  .86rem + .2vw, .95rem);  /* ラベル */
+  --fs-base: 1rem;                                  /* 本文 */
+  --fs-lg:  clamp(1.05rem, .98rem + .5vw, 1.2rem); /* 強調文 */
+  --fs-xl:  clamp(1.4rem,  1.1rem + 1.2vw, 1.8rem);/* セク見出し */
+  --fs-2xl: clamp(1.8rem,  1.4rem + 2vw,  2.4rem); /* ヒーロー */
+
+  /* ===== Colors（3色構成＋補助）===== */
+  --color-bg: #ffffff;      /* ページ背景（白） */
+  --color-surface: #f8fafc; /* セクション背景（薄灰） */
+  --color-fg: #0f172a;      /* 本文（濃紺） */
+  --color-muted: #475569;   /* 補足文（中間灰） */
+  --color-border: #e5e7eb;  /* 罫線（淡灰） */
+
+  --color-brand: #2563eb;       /* 主導線（青） */
+  --color-brand-ink: #ffffff;   /* 主導線上の文字 */
+  --color-accent: #16a34a;      /* 補助導線（緑） */
+  --color-accent-ink: #ffffff;  /* 補助導線上の文字 */
+
+  --color-link: var(--color-brand);  /* リンクは主導線色 */
+  --color-link-hover: #1d4ed8;       /* 濃い青（hover） */
+}
+
+/* ===== Optional: 闇色テーマ（ダークヒーロー）=====
+   .theme-dark を <html> か <body> に付けた時だけ発動。 */
+.theme-dark{
+    --color-bg: #0b1020;
+    --color-surface: #0f172a;
+    --color-fg: #e6e8f0;
+    --color-muted: #93a0b4;
+    --color-border: #1f2937;
+
+    --color-brand: #60a5fa;     /* 闇に浮く青 */
+    --color-brand-ink: #0b1020;
+    --color-accent: #34d399;    /* 冷たい緑 */
+    --color-accent-ink: #0b1020;
+
+    --color-link: var(--color-brand);
+    --color-link-hover: #3b82f6;
+}

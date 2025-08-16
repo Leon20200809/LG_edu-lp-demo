@@ -1,0 +1,4 @@
+{
+  "typeAcquisition": { "include": ["jquery"] },
+  "compilerOptions": { "checkJs": false }
+}

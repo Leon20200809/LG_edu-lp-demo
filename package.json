@@ -1,0 +1,24 @@
+{
+  "name": "lg_edu-lp-demo",
+  "version": "1.0.0",
+  "description": "教育コンテンツ企業向けのランディングページデモ。\r BEM設計＋ユーティリティクラスで保守性を重視。",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Leon20200809/LG_edu-lp-demo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Leon20200809/LG_edu-lp-demo/issues"
+  },
+  "homepage": "https://github.com/Leon20200809/LG_edu-lp-demo#readme",
+  "devDependencies": {
+    "@types/jquery": "^3.5.32",
+    "jquery": "^3.7.1"
+  }
+}

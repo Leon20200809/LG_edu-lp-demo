@@ -1,3 +1,66 @@
+/* === Mobile  === */
 @media (max-width: 768px) {
-    
+  
+  /* スマホはヘッダーを隠さない */
+  body.isNavOpen .header{
+    transform: none !important;
+  }
+
+  /* ハンバーガーを出し、ナビをドロワー化 */
+  .hamburger {
+    display: inline-grid;
+    place-content: center;
+    gap: 4px;
+    inline-size: 40px;
+    block-size: 40px;
+    background: transparent;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+  }
+  .hamburger__bar {
+    inline-size: 22px;
+    block-size: 2px;
+    background: var(--color-fg);
+    border-radius: 2px;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+  .hamburger.isActive .hamburger__bar:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+  }
+  .hamburger.isActive .hamburger__bar:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.isActive .hamburger__bar:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
+  }
+
+  .site-nav {
+    pointer-events: none;
+    position: absolute;
+    inset-block-start: 100%;
+    inset-inline: 0;
+    background: #fff;
+    border-bottom: 1px solid var(--color-border);
+    padding: var(--space-4);
+    flex-direction: column;
+    gap: 0;
+    opacity: 0;
+    transform: translateY(-10px) scaleY(.95);
+    transition: all 0.3s ease;
+  }
+  .site-nav.isActive {
+    opacity: 1;
+    transform: none;
+    pointer-events: auto;
+  }
+  .site-nav__link {
+    display: block;
+    padding: 0.8rem 0;
+  }
+  .site-nav__cta {
+    display: block;
+    text-align: center;
+    margin-top: var(--space-2);
+  }
 }
